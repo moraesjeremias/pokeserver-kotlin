@@ -3,6 +3,7 @@ val kotlinVersion: String by project
 val logbackVersion: String by project
 val dotEnvVersion: String by project
 val koinVersion: String by project
+val config4kVersion: String by project
 
 plugins {
     application
@@ -33,8 +34,9 @@ dependencies {
 
     implementation("io.ktor:ktor-serialization:$ktorVersion")
     implementation("ch.qos.logback:logback-classic:$logbackVersion")
+    implementation("io.github.microutils:kotlin-logging:2.0.3")
     implementation("io.github.cdimascio:dotenv-kotlin:$dotEnvVersion")
-
+    implementation("io.github.config4k:config4k:$config4kVersion")
     implementation ("io.insert-koin:koin-core-ext:$koinVersion")
     implementation ("io.insert-koin:koin-ktor:$koinVersion")
     implementation ("io.insert-koin:koin-logger-slf4j:$koinVersion")
