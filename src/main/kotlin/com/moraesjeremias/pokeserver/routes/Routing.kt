@@ -1,10 +1,8 @@
-package com.moraesjeremias.plugins
+package com.moraesjeremias.pokeserver.routes
 
 import io.ktor.routing.*
-import io.ktor.http.*
 import io.ktor.application.*
 import io.ktor.response.*
-import io.ktor.request.*
 
 fun Application.configureRouting() {
     // Starting point for a Ktor app:
