@@ -1,5 +1,6 @@
 package com.moraesjeremias.pokeserver.config
 
+import com.moraesjeremias.pokeserver.integration.pokemons.service.PokemonService
 import io.ktor.client.*
 import io.ktor.client.engine.jetty.*
 import io.ktor.client.features.json.*
@@ -8,6 +9,7 @@ import io.ktor.client.features.logging.*
 import io.ktor.util.*
 import org.koin.core.module.Module
 import org.koin.dsl.module
+import org.koin.experimental.builder.single
 
 @OptIn(KtorExperimentalAPI::class)
 fun configModule() : Module {
@@ -26,6 +28,7 @@ fun configModule() : Module {
     }
     return module {
         single { httpClient }
-        single { AppConfig.configApp() }
+        single { AppProperties.configApp() }
+        single<PokemonService>()
     }
 }

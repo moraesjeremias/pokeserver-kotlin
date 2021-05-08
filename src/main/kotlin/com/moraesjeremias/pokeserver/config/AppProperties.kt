@@ -29,11 +29,11 @@ data class PokeApi(
     val host: String
 )
 
-data class AppConfig(
+data class AppProperties(
     val pokeapi: PokeApi
 ){
     companion object{
-        fun configApp(): AppConfig {
+        fun configApp(): AppProperties {
             val config: Config = ConfigFactory.load()
             logger.info { "Loading config extraction: ${config.origin().description()}" }
             return config.extract("app")
