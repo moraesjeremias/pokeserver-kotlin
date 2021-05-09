@@ -12,14 +12,14 @@ class PokemonService(
 ){
 
 
-    suspend fun getPokemons(limit: Int, offset: Int){
-//        val po
-        httpClient.get<PokemonModel>(
-            url = URLBuilder(appProperties.pokeapi.host).path("pokemon").build()
-        )
-    }
-    suspend fun getPokemon(id: Int?){
-        httpClient.get<PokemonModel>(
+//    suspend fun getPokemons(limit: Int, offset: Int){
+//        httpClient.get<PokemonModel>(
+//            url = URLBuilder(appProperties.pokeapi.host).path("pokemon").build()
+//        )
+//    }
+    suspend fun getPokemon(id: Int?) =
+        with(id){
+        val pokemonModel =httpClient.get<PokemonModel>(
             url = URLBuilder(appProperties.pokeapi.host).path("pokemon/$id").build()
         )
     }
